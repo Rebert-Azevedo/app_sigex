@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+:root {
+  --blue-left-panel: #1e3a8a;
+  --red-logo: #dc2626;
+  --white: #ffffff;
+  --gray-light: #f8fafc;
+  --gray-dark: #1e293b;
+  --button-blue: #2563eb;
+  --button-blue-hover: #1d4ed8;
+  --input-border: #d1d5db;
+  --input-border-focus: #2563eb;
+  --icon-black: #374151;
+  --close-button-red: #dc2626;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --border-radius: 8px;
+}

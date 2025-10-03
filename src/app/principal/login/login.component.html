@@ -1,76 +1,73 @@
 <section class="login">
-    <img src="user_icon.png" alt="user_icon">
-
-    <form (ngSubmit)="loginUsuario()" #dataForm="ngForm">
-        <span class="titulo">
-            SigeX - Login
-        </span>
-    
-        <span class="slogan">
-            Sistema Integrado de Gestão Empresarial
-        </span>
-    
-        <label for="NM_ENTIDADE">
-            Entidade:
-        </label>
-    
+  <div class="left-panel">
+    <div class="logo">
+      <span class="logo-text">SigeX</span><span class="logo-gear"></span>
+    </div>
+    <div class="welcome-text">
+      <p>Bem Vindo ao</p>
+      <p>Sistema SigeX</p>
+    </div>
+    <div class="footer-text">
+      <p>Desenvolvido por:</p>
+      <p>Grupo SigeX</p>
+    </div>
+  </div>
+  <div class="right-panel">
+    <form (ngSubmit)="loginUsuario()" #dataForm="ngForm" class="login-form">
+      <h2>Faça seu Login</h2>
+      <div class="input-group entity-group">
+        <label for="NM_ENTIDADE">Entidade:</label>
         <input
-        type="text"
-        name="NM_ENTIDADE"
-        id="NM_ENTIDADE"
-        [(ngModel)]="dataRow.NM_ENTIDADE"
-        disabled
-        >
-    
-        <label for="CD_USUARIO">
-            Usuário:
-        </label>
-    
+          type="text"
+          name="NM_ENTIDADE"
+          id="NM_ENTIDADE"
+          [(ngModel)]="dataRow.NM_ENTIDADE"
+          disabled
+        />
+      </div>
+      <div class="input-group">
+        <label for="CD_USUARIO"><i class="fa fa-user"></i> Usuário:</label>
         <input
-        type="text"
-        name="CD_USUARIO"
-        id="CD_USUARIO"
-        [(ngModel)]="dataRow.CD_USUARIO"
-        maxlength="25"
-        required
-        >
-    
-        <label for="HS_SENHA">
-            Senha:
-        </label>
-    
+          type="text"
+          name="CD_USUARIO"
+          id="CD_USUARIO"
+          [(ngModel)]="dataRow.CD_USUARIO"
+          maxlength="25"
+          required
+          placeholder="Usuário"
+        />
+      </div>
+      <div class="input-group">
+        <label for="HS_SENHA"><i class="fa fa-lock"></i> Senha:</label>
         <input
-        type="password"
-        name="HS_SENHA"
-        id="HS_SENHA"
-        [(ngModel)]="dataRow.HS_SENHA"
-        maxlength="25"
-        required
-        >
-    
-        <button
-        type="submit"
-        [disabled]="dataForm.invalid"
-        >
-            Login
+          type="password"
+          name="HS_SENHA"
+          id="HS_SENHA"
+          [(ngModel)]="dataRow.HS_SENHA"
+          maxlength="25"
+          required
+          placeholder="Senha"
+        />
+      </div>
+      <div class="button-group">
+        <button type="submit" [disabled]="dataForm.invalid" class="btn-access">
+          Acessar
         </button>
+      </div>
     </form>
+  </div>
 </section>
 
 <div class="loading" *ngIf="loading">
-    <img src="spinner_icon.png" alt="spinner_icon">
+  <img src="spinner_icon.png" alt="spinner_icon" />
 </div>
 
 <dialog #aviso class="aviso">
-    <img src="alert_icon.png" alt="alert_icon">
+  <img src="alert_icon.png" alt="alert_icon" />
 
-    <div class="aviso">
-        <span class="aviso">
-            {{ mensagem }}
-        </span>
-    
-        <button class="aviso" (click)="fecharAviso()">
-            Confirmar
-        </button>
-    </div>
+  <div class="aviso">
+    <span class="aviso">{{ mensagem }}</span>
+
+    <button class="aviso" (click)="fecharAviso()">Confirmar</button>
+  </div>
 </dialog>
